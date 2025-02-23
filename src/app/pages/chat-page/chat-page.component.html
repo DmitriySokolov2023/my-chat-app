@@ -1,0 +1,23 @@
+<div class="chat">
+  @for (message of messages; track $index) {
+  <div class="chat__message">
+    <div class="chat__user">{{ message.user }}</div>
+    <div class="chat__content">
+      <div class="chat__text">{{ message.message }}</div>
+      <div class="chat__time">{{ message.time }}</div>
+    </div>
+  </div>
+  }
+</div>
+@if (messages.length > 0) {
+<p (click)="removeMessage()" class="remove">Удалить сообщения</p>
+}
+<div class="chat__form">
+  <app-form
+    [form]="chatForm"
+    controlName="message"
+    placeholder="Введите сообщение..."
+    buttonText="Отправить"
+    (submitForm)="sendMessage($event)"
+  ></app-form>
+</div>

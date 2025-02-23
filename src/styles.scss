@@ -11,14 +11,75 @@
 :root {
   height: 100%;
   width: 100%;
-
+  display: flex;
+  justify-content: center;
+  color: var(--light-color);
   --light-color: #ffffff;
   --primary-color: #ae7aff;
   --gray-color: #5f646d;
+  --dark-color: #000000;
   font-family: "JetBrains Mono", sans-serif;
+}
+*::-webkit-scrollbar {
+  width: 12px; /* Ширина скроллбара */
+}
+*::-webkit-scrollbar-track {
+  background: none; /* Цвет фона трека */
+  border-radius: 4px; /* Скругление трека */
+}
+*::-webkit-scrollbar-thumb {
+  background: #0000003b; /* Цвет "ползунка" */
+  border-radius: 4px; /* Скругление ползунка */
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #0000005b; /* Цвет при наведении */
 }
 
 body {
   height: 100%;
+  width: 600px;
+  background-image: url("/assets/imgs/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn {
   width: 100%;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: var(--light-color);
+  border-radius: 4px;
+  border: none;
+}
+
+.input {
+  width: 100%;
+  display: block;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  background: var(--dark-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "JetBrains Mono", sans-serif;
+  color: var(--light-color);
+  &:focus {
+    outline: none;
+    border-color: inherit;
+  }
+}
+
+.inValid {
+  color: red;
+}
+.remove {
+  color: red;
+  margin-bottom: 20px;
+  cursor: pointer;
 }

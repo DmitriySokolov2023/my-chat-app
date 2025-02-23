@@ -1,0 +1,12 @@
+<div class="login__content">
+  <h2>Авторизуйтесь для использования чата</h2>
+</div>
+<div class="login__form">
+  <app-form
+    [form]="loginForm"
+    controlName="username"
+    placeholder="Введите имя пользователя..."
+    buttonText="Войти"
+    (submitForm)="handleLogin($event)"
+  ></app-form>
+</div>

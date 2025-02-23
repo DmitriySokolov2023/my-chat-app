@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <label class="inValid">
+    @if (inValid) {Введите значение}
+    <input
+      type="text"
+      class="input"
+      [formControlName]="controlName"
+      [placeholder]="placeholder"
+      (keyup.enter)="onSubmit()"
+    />
+  </label>
+
+  <button class="btn" (click)="onSubmit()" type="button">
+    {{ buttonText }}
+  </button>
+</form>
