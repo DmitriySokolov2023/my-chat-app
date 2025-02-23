@@ -1,5 +1,7 @@
 <div class="chat">
-  @for (message of messages; track $index) {
+  @if (messages.length == 0 ) {
+  <h2>Сообщений пока что нет</h2>
+  } @for (message of messages; track $index) {
   <div class="chat__message">
     <div class="chat__user">{{ message.user }}</div>
     <div class="chat__content">

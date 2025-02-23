@@ -17,6 +17,7 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginPageComponent {
   constructor(private loginService: LoginService, private router: Router) {}
+
   loginForm = new FormGroup({
     username: new FormControl('', [
       Validators.required,
@@ -26,6 +27,7 @@ export class LoginPageComponent {
   });
   handleLogin(formValue: any) {
     this.loginService.login(formValue?.username || '');
+
     this.router.navigate(['/chat']);
   }
 }

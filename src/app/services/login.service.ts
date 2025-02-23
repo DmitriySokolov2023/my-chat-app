@@ -33,6 +33,7 @@ export class LoginService {
     this.userNameSubject.next(username);
     this.channel.postMessage({ type: 'LOGIN', user: username });
   }
+
   logout() {
     const userName = localStorage.getItem('username');
     if (userName) {

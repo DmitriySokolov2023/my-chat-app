@@ -26,8 +26,9 @@ export class ChatPageComponent implements OnInit {
       this.messages = [...msgs];
       this.cdr.detectChanges();
     });
-    this.loginService.userName$.subscribe((name) => {
-      this.userName = name;
+    this.loginService.userName$.subscribe((user) => {
+      this.userName = user;
+      this.cdr.detectChanges();
     });
   }
 

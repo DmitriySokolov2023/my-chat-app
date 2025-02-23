@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -9,11 +9,15 @@ import { LoginService } from '../../services/login.service';
 })
 export class ProfileComponent implements OnInit {
   userName: string | null = null;
-  constructor(private loginService: LoginService) {}
+  constructor(
+    private loginService: LoginService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.loginService.userName$.subscribe((name) => {
       this.userName = name;
+      this.cdr.detectChanges();
     });
   }
 
