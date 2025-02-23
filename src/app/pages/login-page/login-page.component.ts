@@ -19,11 +19,7 @@ export class LoginPageComponent {
   constructor(private loginService: LoginService, private router: Router) {}
 
   loginForm = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6),
-      Validators.maxLength(12),
-    ]),
+    username: new FormControl('', [Validators.required]),
   });
   handleLogin(formValue: any) {
     this.loginService.login(formValue?.username || '');

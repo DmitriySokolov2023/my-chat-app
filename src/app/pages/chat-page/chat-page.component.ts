@@ -33,10 +33,7 @@ export class ChatPageComponent implements OnInit {
   }
 
   chatForm = new FormGroup({
-    message: new FormControl('', [
-      Validators.required,
-      Validators.minLength(1),
-    ]),
+    message: new FormControl('', [Validators.required]),
   });
   sendMessage(formValue: any) {
     this.chatService.saveMessage(this.userName!, formValue.message);
